@@ -3,7 +3,6 @@ let sx,sy;
 let mx,my;
 let hx,hy;
 
-
 function setup() {
   createCanvas(windowWidth, windowHeight);
   noFill();
