@@ -4,7 +4,7 @@ let mx,my;
 let hx,hy;
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(650, 500);
   noFill();
 }
 
@@ -15,13 +15,13 @@ function PointerCurveS(){
   // fill(150);
   // tint(255, 127);
   beginShape();
-  curveVertex(windowWidth/2, windowHeight/4);
+  curveVertex(500/2, 500/4);
   // curveVertex(windowWidth/2, windowHeight/4);
-  curveVertex(windowWidth/2, windowHeight/2-100);
+  curveVertex(500/2, 500/2-100);
   curveVertex(sx, sy);
-  curveVertex(windowWidth/2, windowHeight/2+100);
+  curveVertex(500/2, 500/2+100);
   // curveVertex(windowWidth/2, 3*windowHeight/4);
-  curveVertex(windowWidth/2, 3*windowHeight/4);
+  curveVertex(500/2, 3*500/4);
   endShape()}
 
 function PointerCurveM(){
@@ -30,13 +30,13 @@ function PointerCurveM(){
   // fill(180);
   // tint(255, 127);
   beginShape();
-    curveVertex(windowWidth/2, windowHeight/4);
+    curveVertex(500/2, 500/4);
   // curveVertex(windowWidth/2, windowHeight/4);
-  curveVertex(windowWidth/2, windowHeight/2-100);
+  curveVertex(500/2, 500/2-100);
   curveVertex(mx, my);
-  curveVertex(windowWidth/2, windowHeight/2+100);
+  curveVertex(500/2, 500/2+100);
   // curveVertex(windowWidth/2, 3*windowHeight/4);
-  curveVertex(windowWidth/2, 3*windowHeight/4);
+  curveVertex(500/2, 3*500/4);
   endShape()}
 
 function PointerCurveH(){
@@ -45,23 +45,23 @@ function PointerCurveH(){
   fill(200);
   // tint(255, 127);
    beginShape();
-    curveVertex(windowWidth/2, windowHeight/4);
+    curveVertex(500/2, 500/4);
   // curveVertex(windowWidth/2, windowHeight/4);
-  curveVertex(windowWidth/2, windowHeight/2-100);
+  curveVertex(500/2, 500/2-100);
   curveVertex(hx, hy);
-  curveVertex(windowWidth/2, windowHeight/2+100);
+  curveVertex(500/2, 500/2+100);
   // curveVertex(windowWidth/2, 3*windowHeight/4);
-  curveVertex(windowWidth/2, 3*windowHeight/4);
+  curveVertex(500/2, 3*500/4);
   endShape()}
 
 // arc function for draw half circles
 function RightCircleCurve(){
-  arc(windowWidth/2,windowHeight/2,windowWidth,windowHeight, PI + HALF_PI, HALF_PI,open);
+  arc(500/2,500/2,500,500, PI + HALF_PI, HALF_PI,open);
   fill(50);
 }
 
 function LeftCircleCurve(){
-  arc(windowWidth/2,windowHeight/2,windowWidth,windowHeight, HALF_PI, PI + HALF_PI,open);
+  arc(500/2,500/2,500,500, HALF_PI, PI + HALF_PI,open);
   fill(50);
 }
 
@@ -70,20 +70,20 @@ function draw() {
   
   // related time and degree
   let s = map(second(), 0, 60, 0, TWO_PI) - HALF_PI;
-  sx = windowWidth/2 + cos(s) * windowWidth/2;
-  sy = windowHeight/2 + sin(s) * windowHeight/2;
+  sx = 500/2 + cos(s) * 500/2;
+  sy = 500/2 + sin(s) * 500/2;
   
   let m = map(minute() + norm(second(), 0, 60), 0, 60, 0, TWO_PI) - HALF_PI;
-   mx = windowWidth/2 + cos(m) * windowWidth/2;
-   my = windowHeight/2 + sin(m) * windowHeight/2;
+   mx = 500/2 + cos(m) * 500/2;
+   my = 500/2 + sin(m) * 500/2;
   
    let h = map(hour() + norm(minute(), 0, 60), 0, 24, 0, TWO_PI * 2) - HALF_PI;
-   hx = windowWidth/2 + cos(h) * windowWidth/2;
-   hy = windowHeight/2 + sin(h) * windowHeight/2;
+   hx = 500/2 + cos(h) * 500/2;
+   hy = 500/2 + sin(h) * 500/2;
   
   
   // draw the curve and the half of circle
-  if(sx<=windowWidth/2){
+  if(sx<=1000/2){
   let t = map(sx, 0, width, -0.4, 1);
   curveTightness(t);
   LeftCircleCurve();
